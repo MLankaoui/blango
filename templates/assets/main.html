@@ -9,6 +9,9 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
+    <!-- Main CSS File -->
+    <link href="{% static 'assets/css/main.css'%}" rel="stylesheet">
+
     <!-- Favicons -->
     <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
     <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
@@ -25,8 +28,7 @@
     <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
 
-    <!-- Main CSS File -->
-    <link href="{% static 'assets/css/main.css'%}" rel="stylesheet">
+    
 </head>
 <body>
     {% include 'assets/header.html' %}
@@ -89,10 +91,10 @@
       </section><!-- /Hero Section -->
 
 
-      {% block main %}
+      {% block maincontent %}
 
 
-      {% endblock main %}
+      {% endblock maincontent %}
 
 
       {% include 'assets/footer.html' %}
