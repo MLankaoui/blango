@@ -192,4 +192,121 @@
     color: #f76c00; /* Orange on hover */
   }
 
-  
+  .clients-section {
+    padding: 60px 0;
+    background-color: #f76c00; /* Light background color for contrast */
+  }
+
+  .clients-section h2 {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .client-logo img {
+    max-width: 150px; /* Control logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .client-logo img:hover {
+    filter: grayscale(0%);
+  }
+
+  @media (max-width: 768px) {
+    .clients-logos {
+      justify-content: center;
+    }
+
+    .client-logo img {
+      max-width: 120px; /* Smaller logos on smaller screens */
+    }
+  }
+
+  .info-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    height: 100vh;
+  }
+
+  .info-section h2 {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .info-details {
+    margin-bottom: 30px;
+  }
+
+  .info-details h4 {
+    color: #f76c00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .info-details p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .contact-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form h4 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .contact-form .form-control,
+  .contact-form .form-control:focus {
+    border-color: #f76c00;
+    box-shadow: none;
+  }
+
+  .contact-form button {
+    background-color: #f76c00;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background-color: #e65c00;
+  }
+
+  .map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
