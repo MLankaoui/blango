@@ -24,9 +24,9 @@
         <!-- Contact Info -->
         <div class="col-md-4">
           <h5>Contact Information</h5>
-          <p><i class="bi bi-geo-alt"></i> 1234 Main Street, City, Country</p>
-          <p><i class="bi bi-phone"></i> +1 (234) 567-8901</p>
-          <p><i class="bi bi-envelope"></i> contact@blango.com</p>
+          <p><i class="bi bi-geo-alt"></i>  {{ infos.company_location }} </p>
+          <p><i class="bi bi-phone"></i> {{ infos.phone_number }} </p>
+          <p><i class="bi bi-envelope"></i> {{ infos.company_email }}</p>
 
           <!-- Social Media Icons -->
           <div class="social-icons mt-3">
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="copyright">
-        &copy; 2024 Blango. All rights reserved.
+        &copy; 2024 {{ infos.company_name }}. All rights reserved.
       </div>
     </div>
   </footer>
