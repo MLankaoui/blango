@@ -1,3 +1,5 @@
 # blango
-a simple blog app using django framework
+a simple agency app using django framework
+
+
 
