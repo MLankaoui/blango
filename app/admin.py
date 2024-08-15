@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Infos, ServicesModel, AboutModel
+from app.models import Infos, ServicesModel, AboutModel, Team
 
 
 @admin.register(Infos)
@@ -16,3 +16,8 @@ class ServiceAdmin(admin.ModelAdmin):
 @admin.register(AboutModel)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ['about_title', 'about_content']
+
+
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['team_name', 'team_role']

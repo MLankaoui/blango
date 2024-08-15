@@ -53,3 +53,9 @@ class AboutModel(models.Model):
 
     def __str__(self) -> str:
         return self.about_title
+    
+
+class Team(models.Model):
+    team_name = models.CharField(max_length=50)
+    team_picture = models.ImageField(upload_to='uploads') 
+    team_role = models.CharField(max_length=50)

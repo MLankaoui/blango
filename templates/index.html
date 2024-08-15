@@ -1,9 +1,4 @@
-{% extends 'assets/main.html' %}
-
-{% load static %}
-
-{% block maincontent %}
-
+{% extends 'assets/main.html' %} {% load static %} {% block maincontent %}
 
 <section class="services" id="services">
   <div class="container">
@@ -11,7 +6,11 @@
       {% for service in services %}
       <div class="col-md-4">
         <div class="card">
-          <img src="{{ service.service_picture.url }}" class="card-img-top" alt="{{ service.service_title }}">
+          <img
+            src="{{ service.service_picture.url }}"
+            class="card-img-top"
+            alt="{{ service.service_title }}"
+          />
           <div class="card-body">
             <h5 class="card-title">{{ service.service_title }}</h5>
             <p class="card-text">{{ service.service_description }}</p>
@@ -23,125 +22,134 @@
     </div>
   </div>
 </section>
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2> {{ about.about_title }} </h2>
-          <p> {{ about.about_content }} </p>
-          <a href="#our-team" class="btn btn-orange">Meet Our Team</a>
-        </div>
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/about-2.jpg' %}" alt="About Us">
-        </div>
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ about.about_title }}</h2>
+        <p>{{ about.about_content }}</p>
+        <a href="#our-team" class="btn btn-orange">Meet Our Team</a>
+      </div>
+      <div class="col-md-6">
+        <img src="{{ about.about_image.url }}" alt="About Us" />
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="team-section" id="our-team">
-    <div class="container">
-      <h2>Meet Our Team</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="{% static 'assets/img/team/team-2.jpg' %}" alt="Team Member 1">
-            <h5>Jane Doe</h5>
-            <p>Front-end Developer</p>
-            <div class="social-links">
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-twitter"></i></a>
-              <a href="#"><i class="bi bi-github"></i></a>
+<section class="team-section" id="our-team">
+  <div class="container">
+    <h2>Our Team</h2>
+    <div class="row">
+      {% for team in team %}
+      <div class="col-md-4">
+        <div class="team-member">
+          <img src="{{ team.team_picture.url }}" alt="Team Member 3" />
+          <h5>{{ team.team_name }}</h5>
+          <p>{{ team.team_role }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="clients-section" id="clients">
+  <div class="container">
+    <div class="clients-logos">
+      <div class="client-logo">
+        <img
+          src="{% static  'assets/img/clients/client-1.png' %}"
+          alt="Client 1"
+        />
+      </div>
+      <div class="client-logo">
+        <img
+          src="{% static  'assets/img/clients/client-2.png' %}"
+          alt="Client 2"
+        />
+      </div>
+      <div class="client-logo">
+        <img
+          src="{% static  'assets/img/clients/client-3.png' %}"
+          alt="Client 3"
+        />
+      </div>
+      <div class="client-logo">
+        <img
+          src="{% static  'assets/img/clients/client-4.png' %}"
+          alt="Client 4"
+        />
+      </div>
+      <div class="client-logo">
+        <img
+          src="{% static  'assets/img/clients/client-5.png' %}"
+          alt="Client 5"
+        />
+      </div>
+      <!-- Add more client logos as needed -->
+    </div>
+  </div>
+</section>
+
+<section class="info-section" id="info">
+  <div class="container">
+    <h2>Contact & Company Info</h2>
+    <div class="row">
+      <!-- Company Info -->
+      <div class="col-md-6 info-details">
+        <h4>{{ infos.company_name }}</h4>
+        <p><strong>Location:</strong> {{ infos.company_location }}</p>
+        <p><strong>Working Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0753177083417!2d-122.4194156846819!3d37.7749292797591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8a0b8ff7%3A0x6d6b2b5b10e8b7b2!2s1234%20Main%20St%2C%20San%20Francisco%2C%20CA%2094141!5e0!3m2!1sen!2sus!4v1608675392035!5m2!1sen!2sus"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <div class="contact-form">
+          <h4>Contact Us</h4>
+          <form action="#" method="post">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="{% static 'assets/img/team/team-3.jpg' %}" alt="Team Member 2">
-            <h5>John Smith</h5>
-            <p>Back-end Developer</p>
-            <div class="social-links">
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-twitter"></i></a>
-              <a href="#"><i class="bi bi-github"></i></a>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="{% static 'assets/img/team/team-4.jpg' %}" alt="Team Member 3">
-            <h5>Emily Johnson</h5>
-            <p>UX/UI Designer</p>
-            <div class="social-links">
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-twitter"></i></a>
-              <a href="#"><i class="bi bi-github"></i></a>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
             </div>
-          </div>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="clients-section" id="clients">
-    <div class="container">
-      <div class="clients-logos">
-        <div class="client-logo">
-          <img src="{% static  'assets/img/clients/client-1.png' %}" alt="Client 1">
-        </div>
-        <div class="client-logo">
-          <img src="{% static  'assets/img/clients/client-2.png' %}" alt="Client 2">
-        </div>
-        <div class="client-logo">
-          <img src="{% static  'assets/img/clients/client-3.png' %}" alt="Client 3">
-        </div>
-        <div class="client-logo">
-          <img src="{% static  'assets/img/clients/client-4.png' %}" alt="Client 4">
-        </div>
-        <div class="client-logo">
-          <img src="{% static  'assets/img/clients/client-5.png' %}" alt="Client 5">
-        </div>
-        <!-- Add more client logos as needed -->
-      </div>
-    </div>
-  </section>
-
-  <section class="info-section" id="info">
-    <div class="container">
-      <h2>Contact & Company Info</h2>
-      <div class="row">
-        <!-- Company Info -->
-        <div class="col-md-6 info-details">
-          <h4>{{ infos.company_name }}</h4>
-          <p><strong>Location:</strong> {{ infos.company_location }}</p>
-          <p><strong>Working Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0753177083417!2d-122.4194156846819!3d37.7749292797591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8a0b8ff7%3A0x6d6b2b5b10e8b7b2!2s1234%20Main%20St%2C%20San%20Francisco%2C%20CA%2094141!5e0!3m2!1sen!2sus!4v1608675392035!5m2!1sen!2sus" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-md-6">
-          <div class="contact-form">
-            <h4>Contact Us</h4>
-            <form action="#" method="post">
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-              </div>
-              <button type="submit">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 {% endblock maincontent%}
