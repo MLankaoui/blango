@@ -4,42 +4,29 @@
 
 {% block maincontent %}
 
+
 <section class="services" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="{% static 'assets/img/services/FRONT-END.png' %}" class="card-img-top" alt="Front-end Development">
-            <div class="card-body">
-              <h5 class="card-title">Front-end Development</h5>
-              <p class="card-text">We create stunning and responsive websites using the latest front-end technologies like HTML, CSS, JavaScript, and React.</p>
-              <a href="#info" class="btn btn-orange">Learn More</a>
-            </div>
+  <div class="container">
+    <div class="row">
+      {% for service in services %}
+      <div class="col-md-4">
+        <div class="card">
+          <img src="{{ service.service_picture.url }}" class="card-img-top" alt="{{ service.service_title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ service.service_title }}</h5>
+            <p class="card-text">{{ service.service_description }}</p>
+            <a href="#info" class="btn btn-orange">Learn More</a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="{% static 'assets/img/services/BAC- END.png' %}" class="card-img-top" alt="Back-end Development">
-            <div class="card-body">
-              <h5 class="card-title">Back-end Development</h5>
-              <p class="card-text">Our back-end services include building robust and scalable server-side applications with Node.js, Python, and databases.</p>
-              <a href="#info" class="btn btn-orange">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-              <img src="{% static 'assets/img/services/ux-ui.png' %}" class="card-img-top" alt="UX/UI Design">
-              <div class="card-body">
-                <h5 class="card-title">UX/UI Design</h5>
-                <p class="card-text">We craft intuitive and engaging user experiences with a focus on aesthetic and usability, ensuring your product is user-friendly and visually appealing.</p>
-                <a href="#info" class="btn btn-orange">Learn More</a>
-              </div>
-            </div>
-          </div>
       </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+
 
   <section class="about-section" id="about">
     <div class="container">
