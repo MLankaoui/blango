@@ -59,3 +59,7 @@ class Team(models.Model):
     team_name = models.CharField(max_length=50)
     team_picture = models.ImageField(upload_to='uploads') 
     team_role = models.CharField(max_length=50)
+
+
+class ClientsModel(models.Model):
+    client_logo = models.ImageField(upload_to='uploads')

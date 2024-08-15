@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Infos, ServicesModel, AboutModel, Team
+from app.models import Infos, ServicesModel, AboutModel, Team, ClientsModel
 
 
 @admin.register(Infos)
@@ -21,3 +21,8 @@ class AboutAdmin(admin.ModelAdmin):
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ['team_name', 'team_role']
+
+
+@admin.register(ClientsModel)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ["client_logo"]

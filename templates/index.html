@@ -57,37 +57,11 @@
 <section class="clients-section" id="clients">
   <div class="container">
     <div class="clients-logos">
+      {% for client in clients %}
       <div class="client-logo">
-        <img
-          src="{% static  'assets/img/clients/client-1.png' %}"
-          alt="Client 1"
-        />
+        <img src="{{ client.client_logo.url }}" alt="Client 1" />
       </div>
-      <div class="client-logo">
-        <img
-          src="{% static  'assets/img/clients/client-2.png' %}"
-          alt="Client 2"
-        />
-      </div>
-      <div class="client-logo">
-        <img
-          src="{% static  'assets/img/clients/client-3.png' %}"
-          alt="Client 3"
-        />
-      </div>
-      <div class="client-logo">
-        <img
-          src="{% static  'assets/img/clients/client-4.png' %}"
-          alt="Client 4"
-        />
-      </div>
-      <div class="client-logo">
-        <img
-          src="{% static  'assets/img/clients/client-5.png' %}"
-          alt="Client 5"
-        />
-      </div>
-      <!-- Add more client logos as needed -->
+      {% endfor%}
     </div>
   </div>
 </section>
