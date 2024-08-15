@@ -30,7 +30,8 @@ linux:
 ```
 
 - start the local server
-  windows:
+
+windows:
 
 ```bash
     python manage.py runserver
