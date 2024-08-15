@@ -17,13 +17,13 @@ a simple agency app using django framework
 
 - activate the virtual environement
 
-  windows:
+windows:
 
 ```bash
     .\venv\Script\activate
 ```
 
-    linux:
+linux:
 
 ```bash
     source venv/Script/activate
@@ -34,9 +34,10 @@ a simple agency app using django framework
 
 ```bash
     python manage.py runserver
+
 ```
 
-    linux:
+linux:
 
 ```bash
     python3 manage.py runserver
