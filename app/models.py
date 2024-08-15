@@ -36,3 +36,20 @@ class ServicesModel(models.Model):
 
     def __str__(self) -> str:
         return self.service_title
+    
+
+
+# about model
+class AboutModel(models.Model):
+    about_title = models.CharField(max_length=50)
+    about_content = models.TextField()
+    about_image = models.ImageField(upload_to='uploads')
+
+    class Meta:
+        db_table = 'about'
+        managed = True
+        verbose_name = 'about'
+        verbose_name_plural = 'about'
+
+    def __str__(self) -> str:
+        return self.about_title

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Infos, ServicesModel
+from app.models import Infos, ServicesModel, AboutModel
 
 
 @admin.register(Infos)
@@ -9,5 +9,10 @@ class InfosAdmin(admin.ModelAdmin):
 
 
 @admin.register(ServicesModel)
-class InfosAdmin(admin.ModelAdmin):
+class ServiceAdmin(admin.ModelAdmin):
     list_display = ['service_title', 'service_description']
+
+
+@admin.register(AboutModel)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ['about_title', 'about_content']
